@@ -10,11 +10,11 @@ function tirarDado(){
         document.getElementById('diceGroup2').innerHTML = '';
         var bandera = true;
 
-        for(var i = 1; i<7; i++){
+        for(var i = 1; i<6; i++){
 
-            if(i == 4) bandera = false;
+            if(i == 3) bandera = false;
 
-            var numero = Math.floor((Math.random() * 6) + 1);
+            var numero = Math.floor((Math.random() * 5) + 1);
 
                 switch (numero) {
 
@@ -97,44 +97,25 @@ function tirarDado(){
                                                                                 '<span class="dot"></span></div></div>';
                         } 
                     break;
-                    
-                    case 6:
-                        if(bandera){
-                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-6" class="sixth-face dice">' +
-                                                                                '<div class="column">' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span></div>' +
-                                                                                '<div class="column">' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span></div></div>';
-                        }else{
-                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-6" class="sixth-face dice">' +
-                                                                                '<div class="column">' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span></div>' +
-                                                                                '<div class="column">' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span>' +
-                                                                                '<span class="dot"></span></div></div>';
-                        } 
-                    break;
                 }
         }
         document.getElementById("diceGroup1").removeAttribute('style');
         document.getElementById("diceGroup2").removeAttribute('style');
     }, 1500 );
     
-
-    
 }
 
 function mostrarPanel(){
-    document.getElementById("btnDados").removeAttribute('style');
-    document.getElementById("btnDados").setAttribute('class', 'btnTirar');
-    document.getElementById("panel").setAttribute('class', 'showPanel');
+
+    if(document.getElementById("nombreJugador").value == ""){
+        alert("Complete el nombre");
+    }else{
+        document.getElementById("btnDados").removeAttribute('style');
+        document.getElementById("btnDados").setAttribute('class', 'btnTirar');
+        document.getElementById("panel").setAttribute('class', 'showPanel');
+        document.getElementById("tablePoints").removeAttribute('style');
+    }
+    
 }
 
 var delay = ( function() {

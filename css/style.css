@@ -89,13 +89,28 @@ h2 {
     color: white;
 }
 
+.inputTxt{
+    background: transparent;
+    border: 0;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    left: 51%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+
   
   /*------------------- Dados -------------------*/
 
 .container-1{
     position: absolute;
     top: 5%;
-    left: 50%;
+    left: 54%;
     display: flex;
 }
 
@@ -248,4 +263,25 @@ h2 {
     100% {
         opacity: 0;
     }
+}
+
+/* table */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    position: relative;
+    top: -150px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: white;
+}
+  
+tr:nth-child(even) {
+    background:linear-gradient(to bottom, #6652c3, #50b2ca) !important;
 }
