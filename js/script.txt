@@ -1,0 +1,146 @@
+function tirarDado(){
+    document.getElementById('diceGroup1').innerHTML = '';
+    document.getElementById('diceGroup2').innerHTML = '';
+    document.getElementById('loader').removeAttribute('style');
+
+    delay(function(){
+
+        document.getElementById('loader').style = 'display: none';
+        document.getElementById('diceGroup1').innerHTML = '';
+        document.getElementById('diceGroup2').innerHTML = '';
+        var bandera = true;
+
+        for(var i = 1; i<7; i++){
+
+            if(i == 4) bandera = false;
+
+            var numero = Math.floor((Math.random() * 6) + 1);
+
+                switch (numero) {
+
+                    case 1:
+                    if(bandera){
+                        document.getElementById('diceGroup1').innerHTML += '<div id="dice-1" class="dice first-face">' +
+                                                                            '<span class="dot"></span></div>';
+                    }else{
+                        document.getElementById('diceGroup2').innerHTML += '<div id="dice-1" class="dice first-face">' +
+                                                                            '<span class="dot"></span></div>';
+                    } 
+                    break;
+
+                    case 2:
+                        if(bandera){
+                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-2" class="dice second-face">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>';
+                        }else{
+                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-2" class="dice second-face">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>';
+                        } 
+                    break;
+
+                    case 3:
+                        if(bandera){
+                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-3" class="dice third-face">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>';
+                        }else{
+                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-3" class="dice third-face">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>';
+                        } 
+                    break;
+
+                    case 4:
+                        if(bandera){
+                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-4" class="fourth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        }else{
+                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-4" class="fourth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        } 
+                    break;
+
+                    case 5:
+                        if(bandera){
+                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-5" class="fifth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        }else{
+                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-5" class="fifth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        } 
+                    break;
+                    
+                    case 6:
+                        if(bandera){
+                            document.getElementById('diceGroup1').innerHTML += '<div id="dice-6" class="sixth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        }else{
+                            document.getElementById('diceGroup2').innerHTML += '<div id="dice-6" class="sixth-face dice">' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div>' +
+                                                                                '<div class="column">' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span>' +
+                                                                                '<span class="dot"></span></div></div>';
+                        } 
+                    break;
+                }
+        }
+        document.getElementById("diceGroup1").removeAttribute('style');
+        document.getElementById("diceGroup2").removeAttribute('style');
+    }, 1500 );
+    
+
+    
+}
+
+function mostrarPanel(){
+    document.getElementById("btnDados").removeAttribute('style');
+    document.getElementById("btnDados").setAttribute('class', 'btnTirar');
+    document.getElementById("panel").setAttribute('class', 'showPanel');
+}
+
+var delay = ( function() {
+    var timer = 0;
+    return function(callback, ms) {
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
